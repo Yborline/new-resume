@@ -2,7 +2,7 @@ import "./Home.sass";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-main-box">
       <div className="jumbotron">
         <h1 className="display-4">Hello!</h1>
         <p className="lead">
@@ -19,7 +19,7 @@ const Home = () => {
           download="resume.pdf"
           role="button"
         >
-          Learn more
+          Download
         </a>
       </div>
     </div>

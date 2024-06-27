@@ -1,0 +1,37 @@
+
+.bg-body-tertiary
+  padding-left: 20px
+  padding-right: 20px
+
+  background: var(--navbar-background) !important
+  backdrop-filter: blur(2px)
+
+  .title
+    color: var(--navbar-color-active)
+  .navbar-toggler
+    background: var(--navbar-toggle-background)
+  #basic-navbar-nav
+    .ms-auto
+      .link
+        text-align: center
+        color: var(--navbar-color)
+        &.active
+          color: var(--navbar-color-active)
+
+@media screen  and (min-width:220px)
+  .bg-body-tertiary
+    padding-left: 20px
+    padding-right: 20px
+    background: var(--navbar-background)
+@media screen  and (min-width: 576px)
+  .bg-body-tertiary
+    padding-left: 0px
+    padding-right: 0px
+
+    #basic-navbar-nav
+      .ms-auto
+        .link
+
+          margin-right: 10px
+          &:last-of-type
+            margin-right: 0px

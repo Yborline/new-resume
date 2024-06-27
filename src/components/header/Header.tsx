@@ -1,23 +1,49 @@
 import { NavLink } from "react-router-dom";
-import "./Header.css";
+import "./Header.sass";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import ThemeToggle from "../ThemeButton/ThemeButton.tsx";
+import { ThemeContext, Theme } from "../../context/Theme/ThemeContext.tsx";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/">My resume</Navbar.Brand>
+        <Navbar.Brand className="title" href="/">
+          My resume
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+          <ThemeContext.Consumer>
+            {({ theme, setTheme }) => (
+              <ThemeToggle
+                onChange={() => {
+                  if (theme === Theme.Light) setTheme(Theme.Dark);
+                  if (theme === Theme.Dark) setTheme(Theme.Light);
+                }}
+                value={theme === Theme.Dark}
+              />
+            )}
+          </ThemeContext.Consumer>
           <Nav className="ms-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="#about">About</NavLink>
-            <NavLink to="#projects">Project</NavLink>
-            <NavLink to="#game">Game</NavLink>
+            <NavLink className="link" to="/">
+              Resume
+            </NavLink>
+            <NavLink className="link" to="about">
+              Cover Letter
+            </NavLink>
+            <NavLink className="link" to="projects">
+              Projects
+            </NavLink>
+            <NavLink className="link" to="game">
+              Game
+            </NavLink>
+            <NavLink className="link" to="game">
+              Contacts
+            </NavLink>
+
             {/* <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#about">About</Nav.Link>
             <Nav.Link href="#projects">Projects</Nav.Link>
