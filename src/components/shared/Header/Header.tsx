@@ -3,19 +3,18 @@ import "./Header.sass";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import ThemeToggle from "../ThemeButton/ThemeButton.tsx";
-import { ThemeContext, Theme } from "../../context/Theme/ThemeContext.tsx";
+import ThemeToggle from "../../widgets/ThemeButton/ThemeButton.tsx";
+import { ThemeContext, Theme } from "../../../context/Theme/ThemeContext.tsx";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Header = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand className="title" href="/">
-          My resume
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <div className="navbar_box-left">
+          <Navbar.Brand className="title" href="/">
+            My resume
+          </Navbar.Brand>
           <ThemeContext.Consumer>
             {({ theme, setTheme }) => (
               <ThemeToggle
@@ -27,11 +26,14 @@ const Header = () => {
               />
             )}
           </ThemeContext.Consumer>
+        </div>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink className="link" to="/">
               Resume
             </NavLink>
-            <NavLink className="link" to="about">
+            <NavLink className="link" to="letter">
               Cover Letter
             </NavLink>
             <NavLink className="link" to="projects">

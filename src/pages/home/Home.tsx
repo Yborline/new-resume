@@ -1,27 +1,19 @@
+import DownloadInfo from "@components/shared/DownloadInfo/DownloadInfo";
 import "./Home.sass";
 
+const textOne =
+  "My name is Yaroslav and I am a Full Stack developer. For more detailedinformation about me, you can find out by downloading my resume. Also on this site you can see my projects and my little game and set your own record.";
+const textTwo = "You can download the resume from the link below.";
 const Home = () => {
   return (
     <div className="home-main-box">
-      <div className="jumbotron">
-        <h1 className="display-4">Hello!</h1>
-        <p className="lead">
-          My name is Yaroslav and I am a Full Stack developer. For more detailed
-          information about me, you can find out by downloading my resume. Also
-          on this site you can see my projects and my little game and set your
-          own record.
-        </p>
-        <hr className="my-4" />
-        <p>You can download the resume from the link below.</p>
-        <a
-          className="btn btn-primary btn-lg"
-          href="/src/files/resume.pdf"
-          download="resume.pdf"
-          role="button"
-        >
-          Download
-        </a>
-      </div>
+      <DownloadInfo
+        title={"Hello!"}
+        textOne={textOne}
+        textTwo={textTwo}
+        download={"resume.pdf"}
+        href={"/src/files/resume.pdf"}
+      />
     </div>
   );
 };

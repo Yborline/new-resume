@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import "./ThemeButton.sass";
-import sprites from "../../assets/sprites/sprites.svg";
+import sprites from "@assets/sprites/sprites.svg";
 
 interface IToggleProps {
   value: boolean;
