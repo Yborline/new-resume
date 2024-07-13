@@ -3,7 +3,7 @@ import "./Header.sass";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import ThemeToggle from "../../widgets/ThemeButton/ThemeButton.tsx";
+import ThemeToggle from "../../shared/ThemeButton/ThemeButton.tsx";
 import { ThemeContext, Theme } from "../../../context/Theme/ThemeContext.tsx";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 
@@ -39,7 +39,7 @@ const Header = () => {
             <NavLink className="link" to="projects">
               Projects
             </NavLink>
-            <NavLink className="link" to="game">
+            <NavLink className="link" to="games">
               Game
             </NavLink>
             <NavLink className="link" to="game">

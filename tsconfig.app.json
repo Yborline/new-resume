@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
@@ -25,7 +21,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./src",
+    "paths": {
+  "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"],
+      "@shared/*": ["shared/*"],           
+       "@data/*": ["data/*"],
+      "@pages/*": ["pages/*"],
+    }
   },
   "include": ["src"]
 }

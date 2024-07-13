@@ -1,4 +1,4 @@
-import DownloadInfo from "@components/shared/DownloadInfo/DownloadInfo";
+import DownloadInfo from "@components/widgets/DownloadInfo/DownloadInfo";
 import "./Home.sass";
 
 const textOne =

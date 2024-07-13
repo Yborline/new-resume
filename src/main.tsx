@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.sass";
+import "./root.scss";
 import { BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./context/Theme/ThemeProvider.tsx";
 

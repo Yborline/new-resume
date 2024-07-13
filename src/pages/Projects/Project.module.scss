@@ -1,0 +1,31 @@
+.project_mainBox {
+    width: 90%;
+    height: 80%;
+    backdrop-filter: blur(4px);
+    background: var(--background-color);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+
+    .project_listProject {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        overflow-y: auto;
+        max-height: 100%;
+        width: 100%;
+        justify-items: center;
+        padding: 20px 30px;
+
+        .project_ProjectItem {
+            // margin-right: 50px;
+            // margin-bottom: 20px;
+
+            &:last-of-type {
+                // margin-right: 0px;
+            }
+
+        }
+    }
+}

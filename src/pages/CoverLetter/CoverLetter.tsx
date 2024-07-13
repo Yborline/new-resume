@@ -1,5 +1,5 @@
 // import DownloadInfo from "@components/shared/DownloadInfo/DownloadInfo";
-import DownloadInfo from "@components/shared/DownloadInfo/DownloadInfo";
+import DownloadInfo from "@components/widgets/DownloadInfo/DownloadInfo";
 
 const textOne = "To see more information about me, please see my cover letter.";
 const textTwo = "You can download the cover letter from the link below.";

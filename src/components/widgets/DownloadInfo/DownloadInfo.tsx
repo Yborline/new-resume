@@ -1,6 +1,8 @@
 import { FC } from "react";
 import "./DownloadInfo.sass";
 
+import ButtonLinkGradient from "@components/shared/ButtonGradient/ButtonLinkGradient";
+
 interface IPropsDownload {
   title: string;
   textOne: string;
@@ -22,14 +24,7 @@ const DownloadInfo: FC<IPropsDownload> = ({
       <p className="lead">{textOne}</p>
       <hr className="my-4" />
       <p>{textTwo}</p>
-      <a
-        className="btn btn-primary btn-lg"
-        href={href}
-        download={download}
-        role="button"
-      >
-        Download
-      </a>
+      <ButtonLinkGradient href={href} download={download} text="Download" />
     </div>
   );
 };

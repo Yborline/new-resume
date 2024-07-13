@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Rubik Glitch Regular"),
+    url("./RubikGlitch-Regular.ttf") format("truetype");
+}

@@ -1,0 +1,72 @@
+.button_arrow-animation {
+  display: flex;
+  align-items: flex-start;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  color: white;
+  background: var(--background-button-card);
+  transition: 1s;
+  box-shadow: 6px 6px 0 var(--background-button-card-box-shadow-one);
+  transform: skewX(-15deg);
+  border: none;
+  padding: 0px 20px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 var(--background-button-card-box-shadow-two);
+  }
+
+  .button_arrow-span-one {
+    transform: skewX(15deg);
+  }
+
+
+  &:hover svg {
+    transition: 0.5s;
+    margin-right: 20px;
+  }
+
+  &:hover .one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+  }
+
+  &:hover .two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+  }
+
+  &:hover .three {
+    animation: color_anim 1s infinite 0.2s;
+  }
+}
+
+
+
+
+
+
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: #FBC638;
+  }
+
+  100% {
+    fill: white;
+  }
+}

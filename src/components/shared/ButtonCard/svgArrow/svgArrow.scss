@@ -1,0 +1,40 @@
+.svg-arrow {
+    position: static !important;
+    transition: 0.5s;
+    margin-right: 0px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+}
+
+.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.three {
+    transition: 0.6s;
+    transform: translateX(0%);
+}
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+
+    50% {
+        fill: #FBC638;
+    }
+
+    100% {
+        fill: white;
+    }
+}
