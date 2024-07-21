@@ -1,6 +1,39 @@
 .imgQuestion {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 
+}
+
+.BoxQuestion {
+    width: 150px;
+    height: 150px;
+}
+
+@media screen and (min-width: 220px) {
+    .imgQuestion {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+
+    .BoxQuestion {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .imgQuestion {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+
+    .BoxQuestion {
+        width: 100%;
+        height: 100%;
+    }
 }

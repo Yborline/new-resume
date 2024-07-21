@@ -14,9 +14,8 @@
         gap: 20px;
         overflow-y: auto;
         max-height: 100%;
-        width: 100%;
+        width: max-content;
         justify-items: center;
-        padding: 20px 30px;
 
         .project_ProjectItem {
             // margin-right: 50px;
@@ -26,6 +25,97 @@
                 // margin-right: 0px;
             }
 
+        }
+    }
+}
+
+@media screen and (min-width: 220px) {
+
+    .project_mainBox {
+        width: 90%;
+        height: 65%;
+        backdrop-filter: blur(4px);
+        background: var(--background-color);
+        border-radius: 8px;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: center;
+
+        .project_listProject {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            overflow-y: auto;
+            max-height: 100%;
+            width: 100%;
+            justify-items: center;
+
+
+            .project_ProjectItem {
+                // margin-right: 50px;
+                // margin-bottom: 20px;
+
+                &:last-of-type {
+                    // margin-right: 0px;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 400px) {
+
+    .project_mainBox {
+        width: 90%;
+        height: 75%;
+
+        padding: 10px 10px;
+
+
+        .project_listProject {
+
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+
+
+
+
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+
+    .project_mainBox {
+        width: 90%;
+        height: 80%;
+        backdrop-filter: blur(4px);
+        background: var(--background-color);
+        border-radius: 8px;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: center;
+
+        .project_listProject {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            overflow-y: auto;
+            max-height: 100%;
+            width: 100%;
+            justify-items: center;
+
+
+            .project_ProjectItem {
+                // margin-right: 50px;
+                // margin-bottom: 20px;
+
+                &:last-of-type {
+                    // margin-right: 0px;
+                }
+
+            }
         }
     }
 }

@@ -5,13 +5,14 @@ interface IPropsFlippy {
   frontContent: ReactNode;
   backContent: ReactNode;
   // onClick: () => void;
+  styleCard?: string;
   isFlipped: boolean;
 }
 
 const FlippyCard: FC<IPropsFlippy> = ({
   frontContent,
   backContent,
-  // onClick,
+  styleCard = "",
   isFlipped,
 }) => {
   // const [isFlipped, setIsFlipped] = useState(false);
@@ -21,15 +22,13 @@ const FlippyCard: FC<IPropsFlippy> = ({
 
   return (
     <div className={styles.cardContainer}>
-      <div className={`${styles.card} ${isFlipped ? styles.flipped : ""}`}>
-        <div className={styles.front}>
-          {frontContent}
-          {/* <h1>Front</h1> */}
-        </div>
-        <div className={styles.back}>
-          {backContent}
-          {/* <h1>Back</h1> */}
-        </div>
+      <div
+        className={`${styles.card} ${styles[styleCard]} ${
+          isFlipped ? styles.flipped : ""
+        }`}
+      >
+        <div className={styles.front}>{frontContent}</div>
+        <div className={styles.back}>{backContent}</div>
       </div>
     </div>
   );

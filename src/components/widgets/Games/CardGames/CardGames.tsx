@@ -1,73 +1,99 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { cardGames, ICardGames } from "@data/games";
 import FlippyCard from "@components/widgets/FlipCard/FlipCard";
 import BackCard from "@components/widgets/FlipCard/Content/GameCard/back/BackCard";
 import FrontCard from "@components/widgets/FlipCard/Content/GameCard/front/FrontCard";
 import styles from "./CardGames.module.scss";
+import ButtonCard from "@components/shared/ButtonCard/ButtonCard";
 
-const paitOfArrayCards = [...cardGames, ...cardGames];
+const shuffle = (array: ICardGames[]) => {
+  let currentIndex = array.length;
+  while (currentIndex !== 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+  return array;
+};
 
 const CardGames = () => {
+  const pairOfArrayCards = useMemo(() => [...cardGames, ...cardGames], []);
+
   const [arrayCards, setArrayCards] = useState<ICardGames[]>([]);
   const [openCards, setOpenCards] = useState<number[]>([]);
   const [matched, setMatched] = useState<number[]>([]);
   const [moves, setMoves] = useState(0);
+  const [finishGame, setFinishGame] = useState(true);
 
-  const shuffle = (array: ICardGames[]) => {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      console.log(randomIndex);
-      currentIndex -= 1;
-
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  };
   useEffect(() => {
-    setArrayCards(shuffle(paitOfArrayCards));
-  }, []);
+    setArrayCards(shuffle([...pairOfArrayCards]));
+  }, [pairOfArrayCards]);
 
-  const handleClickCard = (index: number) => {
-    if (openCards[openCards.length - 1] !== index && openCards.length < 2) {
+  const handleClickCard = useCallback(
+    (index: number) => {
+      if (openCards.includes(index) || openCards.length === 2) return;
       setOpenCards((opened) => [...opened, index]);
       setMoves((prevMove) => prevMove + 1);
-    }
-  };
+    },
+    [openCards]
+  );
 
   useEffect(() => {
     if (openCards.length < 2) return;
-    const firstMatched = arrayCards[openCards[0]];
-    const secondMatched = arrayCards[openCards[1]];
-    if (secondMatched && firstMatched.id === secondMatched.id) {
-      setMatched([...matched, firstMatched.id]);
+
+    const [firstIndex, secondIndex] = openCards;
+    const firstCard = arrayCards[firstIndex];
+    const secondCard = arrayCards[secondIndex];
+
+    if (secondCard && firstCard.id === secondCard.id) {
+      setMatched((prevMatched) => [...prevMatched, firstCard.id]);
     }
-    if (openCards.length === 2) setTimeout(() => setOpenCards([]), 1000);
-  }, [arrayCards, matched, openCards]);
-  const handleGameStart = () => {
+
+    const timeoutId = setTimeout(() => setOpenCards([]), 1000);
+    return () => clearTimeout(timeoutId);
+  }, [openCards, arrayCards]);
+
+  useEffect(() => {
+    const arrayNoreapetLength = arrayCards.length / 2;
+    if (arrayNoreapetLength === matched.length && arrayCards.length !== 0) {
+      setFinishGame(true);
+    }
+  }, [arrayCards, matched]);
+
+  const handleGameStart = useCallback(() => {
     setOpenCards([]);
-    setArrayCards(shuffle(paitOfArrayCards));
+    setArrayCards(shuffle([...pairOfArrayCards]));
     setMatched([]);
     setMoves(0);
-  };
-  console.log(arrayCards);
+    setFinishGame(false);
+  }, [pairOfArrayCards]);
+  console.log(finishGame);
+
+  const isFliped = useCallback(
+    (index: number, id: number) => {
+      return openCards.includes(index) || matched.includes(id);
+    },
+    [matched, openCards]
+  );
+
   return (
-    <div>
-      <p>Сделано шагов {moves}</p>
-      <button onClick={handleGameStart}></button>
-      <ul className={styles.listCards}>
+    <div className={styles.boxGame}>
+      <p>Сделано шагов: {moves}</p>
+
+      <ul className={`${styles.listCards}`}>
+        {finishGame && (
+          <div className={styles.overlay} onClick={(e) => e.stopPropagation()}>
+            <ButtonCard onClick={handleGameStart} text={"Почати гру"} />
+          </div>
+        )}
         {arrayCards.map((item, index) => {
-          let isFliped = false;
-          if (openCards.includes(index)) isFliped = true;
-          if (matched.includes(item.id)) isFliped = true;
           return (
             <div key={index}>
               <FlippyCard
+                styleCard="cardGame"
                 frontContent={
                   <FrontCard onClick={() => handleClickCard(index)} />
                 }
@@ -77,7 +103,7 @@ const CardGames = () => {
                     img={item.img}
                   />
                 }
-                isFlipped={isFliped}
+                isFlipped={isFliped(index, item.id)}
               />
             </div>
           );

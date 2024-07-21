@@ -8,7 +8,7 @@ interface IPropsFrontCard {
 
 const FrontCard: FC<IPropsFrontCard> = ({ onClick }) => {
   return (
-    <div onClick={onClick}>
+    <div className={styles.BoxQuestion} onClick={onClick}>
       <img className={styles.imgQuestion} src={questionImg} />
     </div>
   );

@@ -7,7 +7,7 @@ interface IPropsBackCard {
 
 const BackCard: FC<IPropsBackCard> = ({ onClick, img }) => {
   return (
-    <div onClick={onClick}>
+    <div className={styles.BoxQuestion} onClick={onClick}>
       <img className={styles.imgBack} src={img} />
     </div>
   );

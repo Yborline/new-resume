@@ -1,6 +1,25 @@
-.imgBack {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
+    .imgBack {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
 
-}
+    }
+
+    .BoxQuestion {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width: 220px) {
+        .imgBack {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+
+        }
+
+        .BoxQuestion {
+            width: 100%;
+            height: 100%;
+        }
+    }

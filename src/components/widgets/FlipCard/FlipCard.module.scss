@@ -11,6 +11,12 @@
 
 }
 
+.cardGame {
+    width: 150px;
+    height: 150px;
+
+}
+
 .card.flipped {
     transform: rotateY(180deg);
 }
@@ -49,4 +55,74 @@
     z-index: 1;
     // background-color: #1e90ff;
     transform: rotateY(180deg);
+}
+
+
+@media screen and (min-width: 220px) {
+    .card {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+
+    }
+
+    .cardGame {
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+
+}
+
+@media screen and (min-width: 380px) {
+    .cardGame {
+        width: 70px;
+        height: 70px;
+
+    }
+}
+
+@media screen and (min-width: 410px) {
+    .cardGame {
+        width: 80px;
+        height: 80px;
+
+    }
+
+}
+
+@media screen and (min-width: 480px) {
+    .card {
+        width: 300px;
+        height: 300px;
+
+
+    }
+
+    .cardGame {
+        width: 100px;
+        height: 100px;
+
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .cardGame {
+        width: 100px;
+        height: 100px;
+
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .cardGame {
+        width: 150px;
+        height: 150px;
+
+    }
+
 }
