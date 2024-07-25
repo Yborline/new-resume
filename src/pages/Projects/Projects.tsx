@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FlippyCard from "@components/widgets/FlipCard/FlipCard";
 import { FrontContentProject } from "@components/widgets/FlipCard/Content/Project/front/ProjectFront";
 import styles from "./Project.module.scss";

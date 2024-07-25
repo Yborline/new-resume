@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import styles from "./FlipCard.module.scss";
 
 interface IPropsFlippy {

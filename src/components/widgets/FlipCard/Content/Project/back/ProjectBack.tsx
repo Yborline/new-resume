@@ -1,7 +1,6 @@
 import { FC } from "react";
 import styles from "./ProjectBack.module.scss";
 import ButtonCard from "@components/shared/ButtonCard/ButtonCard";
-import { Link } from "react-router-dom";
 
 interface IPropsFront {
   frontend: string;
@@ -15,7 +14,6 @@ interface IPropsFront {
 export const BackContentProject: FC<IPropsFront> = ({
   frontend,
   backend,
-  info,
   technology,
   onClick,
 }) => {

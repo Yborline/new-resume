@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import "./ThemeButton.sass";
 import sprites from "@assets/sprites/sprites.svg";
 
