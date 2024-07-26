@@ -81,7 +81,7 @@ const CardGames = () => {
 
   return (
     <div className={styles.boxGame}>
-      <p>Сделано шагов: {moves}</p>
+      <p className={styles.step}>Сделано шагов: {moves}</p>
 
       <ul className={`${styles.listCards}`}>
         {finishGame && (

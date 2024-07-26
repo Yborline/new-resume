@@ -7,6 +7,14 @@
 }
 
 @media screen and (min-width: 220px) {
+
+    .step {
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 15px;
+        text-align: center
+    }
+
     .listCards {
         padding: 10px;
         width: max-content;

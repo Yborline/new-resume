@@ -4,4 +4,15 @@
     width: max-content;
     background: var(--background-color);
     border-radius: 8px;
+
+    .listGames {
+        margin-top: 10px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .linkGame {}
+
+    }
 }

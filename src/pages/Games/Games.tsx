@@ -6,9 +6,14 @@ const Games = () => {
   console.log(location);
   return (
     <div className={styles.gamesBox}>
-      <ul>
+      <ul className={styles.listGames}>
         {games.map(({ name, link, id }) => (
-          <NavLink to={`/games/${link}`} key={id} end>
+          <NavLink
+            className={styles.linkGame}
+            to={`/games/${link}`}
+            key={id}
+            end
+          >
             {name}
           </NavLink>
         ))}

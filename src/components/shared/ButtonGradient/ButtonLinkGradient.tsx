@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import styles from "./ButtonLinkGradient.module.scss";
 
 interface IPropsButton {
@@ -15,5 +15,5 @@ const ButtonLinkGradient: FC<IPropsButton> = ({ text, href, download }) => {
     </a>
   );
 };
-
-export default ButtonLinkGradient;
+const MemoizedButtonLinkGradient = memo(ButtonLinkGradient);
+export default MemoizedButtonLinkGradient;
