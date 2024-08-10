@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
-import { cardGames, ICardGames } from "@data/games";
+import { memo, useCallback, useMemo, useState, useEffect } from "react";
 import FlippyCard from "@components/widgets/FlipCard/FlipCard";
-import BackCard from "@components/widgets/FlipCard/Content/GameCard/back/BackCard";
 import FrontCard from "@components/widgets/FlipCard/Content/GameCard/front/FrontCard";
-import styles from "./CardGames.module.scss";
+import BackCard from "@components/widgets/FlipCard/Content/GameCard/back/BackCard";
 import ButtonCard from "@components/shared/ButtonCard/ButtonCard";
+import styles from "./CardGames.module.scss";
+import { cardGames, ICardGames } from "@data/games";
 
 const shuffle = (array: ICardGames[]) => {
   let currentIndex = array.length;
@@ -40,7 +40,9 @@ const CardGames = () => {
     },
     [openCards]
   );
-
+  const handleCardClicks = useMemo(() => {
+    return arrayCards.map((_, index) => () => handleClickCard(index));
+  }, [arrayCards, handleClickCard]);
   useEffect(() => {
     if (openCards.length < 2) return;
 
@@ -57,8 +59,7 @@ const CardGames = () => {
   }, [openCards, arrayCards]);
 
   useEffect(() => {
-    const arrayNoreapetLength = arrayCards.length / 2;
-    if (arrayNoreapetLength === matched.length && arrayCards.length !== 0) {
+    if (arrayCards.length / 2 === matched.length && arrayCards.length !== 0) {
       setFinishGame(true);
     }
   }, [arrayCards, matched]);
@@ -70,14 +71,16 @@ const CardGames = () => {
     setMoves(0);
     setFinishGame(false);
   }, [pairOfArrayCards]);
-  console.log(finishGame);
 
-  const isFliped = useCallback(
-    (index: number, id: number) => {
-      return openCards.includes(index) || matched.includes(id);
-    },
-    [matched, openCards]
-  );
+  const frontContents = useMemo(() => {
+    return arrayCards.map((_, index) => <FrontCard key={`front-${index}`} />);
+  }, [arrayCards]);
+
+  const backContents = useMemo(() => {
+    return arrayCards.map((card, index) => (
+      <BackCard key={`back-${index}`} img={card.img} />
+    ));
+  }, [arrayCards]);
 
   return (
     <div className={styles.boxGame}>
@@ -89,28 +92,25 @@ const CardGames = () => {
             <ButtonCard onClick={handleGameStart} text={"Почати гру"} />
           </div>
         )}
-        {arrayCards.map((item, index) => {
-          return (
-            <div key={index}>
-              <FlippyCard
-                styleCard="cardGame"
-                frontContent={
-                  <FrontCard onClick={() => handleClickCard(index)} />
-                }
-                backContent={
-                  <BackCard
-                    onClick={() => handleClickCard(index)}
-                    img={item.img}
-                  />
-                }
-                isFlipped={isFliped(index, item.id)}
-              />
-            </div>
-          );
-        })}
+        {arrayCards.map((_, index) => (
+          <li key={index} onClick={handleCardClicks[index]}>
+            <FlippyCard
+              key={index}
+              styleCard="cardGame"
+              frontContent={frontContents[index]}
+              backContent={backContents[index]}
+              isFlipped={
+                openCards.includes(index) ||
+                matched.includes(arrayCards[index].id)
+              }
+              id={index}
+            />{" "}
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
 
-export default CardGames;
+const MemoizedCardGames = memo(CardGames);
+export default MemoizedCardGames;

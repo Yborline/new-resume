@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./components/widgets/Footer/Footer";
 import Header from "./components/widgets/Header/Header";
 import { lazy, Suspense } from "react";
+import Contacts from "@pages/Contacts/Contacts";
 
 const Games = lazy(() => import("@pages/Games/Games"));
 const CardGames = lazy(
@@ -28,6 +29,7 @@ function App() {
           <Route path="/games" element={<Games />}>
             <Route path="card_games" element={<CardGames />} />
           </Route>
+          <Route path="/contacts" element={<Contacts />} />
         </Routes>
       </Suspense>
       <Footer />

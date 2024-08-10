@@ -1,0 +1,114 @@
+:root {
+    --orbit-translate: 150px;
+}
+
+@media screen and (min-width: 220px) {
+    .circle {
+        background: radial-gradient(#60AAFE, #0455F1, #D86AF7);
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        transition: all 0.6s ease;
+    }
+
+    .circle1,
+    .circle2 {
+        background: radial-gradient(#60AAFE, #0455F1, #D86AF7);
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+        transition: all 0.6s ease;
+        position: absolute;
+        margin: 8%;
+        transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+    }
+
+    /*при наведении на фигуру*/
+    .circle:hover,
+    .circle1:hover,
+    .circle2:hover {
+        box-shadow: inset #57A8FA 0 0 40px 10px,
+            #57A8FA 0 0 24px 12px;
+    }
+
+    .donut {
+        position: relative;
+        border: 1px solid #F0FFFF;
+        border-radius: 150px;
+        height: 300px;
+        width: 300px;
+        box-shadow: inset #57A8FA 0 0 20px 5px,
+            #57A8FA 0 0 22px 7px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .orbit1 {
+        position: absolute;
+        right: 33%;
+        left: 39%;
+        top: 29%;
+        bottom: 33%;
+
+        animation: Orbita 15s linear infinite;
+    }
+
+
+
+    .orbit2 {
+        position: absolute;
+        right: 33%;
+        left: 39%;
+        top: 29%;
+        bottom: 33%;
+        animation: Orbita2 15s linear infinite;
+    }
+}
+
+@media screen and (min-width: 468px) {
+    :root {
+        --orbit-translate: 200px;
+    }
+
+    .circle {
+
+        height: 150px;
+        width: 150px;
+    }
+
+    .circle1,
+    .circle2 {
+        height: 100px;
+        width: 100px;
+    }
+
+    .donut {
+        border-radius: 50%;
+        height: 400px;
+        width: 400px;
+
+    }
+}
+
+
+
+@keyframes Orbita {
+    from {
+        transform: rotate(0deg) translateX(var(--orbit-translate)) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(var(--orbit-translate)) rotate(-360deg);
+    }
+}
+
+@keyframes Orbita2 {
+    from {
+        transform: rotate(180deg) translateX(var(--orbit-translate)) rotate(180deg);
+    }
+
+    to {
+        transform: rotate(540deg) translateX(var(--orbit-translate)) rotate(540deg);
+    }
+}

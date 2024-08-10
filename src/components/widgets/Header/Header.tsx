@@ -42,7 +42,7 @@ const Header = () => {
             <NavLink className="link" to="games/card_games">
               Game
             </NavLink>
-            <NavLink className="link" to="game">
+            <NavLink className="link" to="contacts">
               Contacts
             </NavLink>
 

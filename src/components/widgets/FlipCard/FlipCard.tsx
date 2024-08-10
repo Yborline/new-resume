@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, memo, ReactNode } from "react";
 import styles from "./FlipCard.module.scss";
 
 interface IPropsFlippy {
@@ -7,6 +7,7 @@ interface IPropsFlippy {
   // onClick: () => void;
   styleCard?: string;
   isFlipped: boolean;
+  id: number;
 }
 
 const FlippyCard: FC<IPropsFlippy> = ({
@@ -14,14 +15,10 @@ const FlippyCard: FC<IPropsFlippy> = ({
   backContent,
   styleCard = "",
   isFlipped,
+  id,
 }) => {
-  // const [isFlipped, setIsFlipped] = useState(false);
-  // const handleClickFlip = () => {
-  //   setIsFlipped(!isFlipped);
-  // };
-
   return (
-    <div className={styles.cardContainer}>
+    <div key={id} className={styles.cardContainer}>
       <div
         className={`${styles.card} ${styles[styleCard]} ${
           isFlipped ? styles.flipped : ""
@@ -34,4 +31,15 @@ const FlippyCard: FC<IPropsFlippy> = ({
   );
 };
 
-export default FlippyCard;
+const areEqual = (prevProps: IPropsFlippy, nextProps: IPropsFlippy) => {
+  return (
+    prevProps.styleCard === nextProps.styleCard &&
+    prevProps.isFlipped === nextProps.isFlipped &&
+    prevProps.frontContent === nextProps.frontContent &&
+    prevProps.backContent === nextProps.backContent &&
+    prevProps.id === nextProps.id
+  );
+};
+const MemoizedFlippyCard = memo(FlippyCard, areEqual);
+
+export default MemoizedFlippyCard;
