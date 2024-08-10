@@ -1,17 +1,16 @@
 import questionImg from "@assets/images/games/question.png";
 import styles from "./FrontCard.module.scss";
-import { FC } from "react";
+import { FC, memo } from "react";
 
-interface IPropsFrontCard {
-  onClick: () => void;
-}
+interface IPropsFrontCard {}
 
-const FrontCard: FC<IPropsFrontCard> = ({ onClick }) => {
+const FrontCard: FC<IPropsFrontCard> = () => {
   return (
-    <div className={styles.BoxQuestion} onClick={onClick}>
+    <div className={styles.BoxQuestion}>
       <img className={styles.imgQuestion} src={questionImg} />
     </div>
   );
 };
 
-export default FrontCard;
+const MemoizedFrontCard = memo(FrontCard);
+export default MemoizedFrontCard;
