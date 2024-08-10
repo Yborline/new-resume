@@ -12,7 +12,8 @@
     }
 
     .circle1,
-    .circle2 {
+    .circle2,
+    .circle3 {
         background: radial-gradient(#60AAFE, #0455F1, #D86AF7);
         border-radius: 50%;
         height: 70px;
@@ -26,7 +27,8 @@
     /*при наведении на фигуру*/
     .circle:hover,
     .circle1:hover,
-    .circle2:hover {
+    .circle2:hover,
+    .circle3:hover {
         box-shadow: inset #57A8FA 0 0 40px 10px,
             #57A8FA 0 0 24px 12px;
     }
@@ -64,6 +66,22 @@
         bottom: 33%;
         animation: Orbita2 15s linear infinite;
     }
+
+    .orbit3 {
+        position: absolute;
+        right: 33%;
+        left: 39%;
+        top: 29%;
+        bottom: 33%;
+        animation: Orbita3 15s linear infinite;
+    }
+
+    .orbit1:hover,
+    .orbit2:hover,
+    .orbit3:hover {
+        animation-play-state: paused;
+    }
+
 }
 
 @media screen and (min-width: 468px) {
@@ -78,7 +96,8 @@
     }
 
     .circle1,
-    .circle2 {
+    .circle2,
+    .circle3 {
         height: 100px;
         width: 100px;
     }
@@ -109,6 +128,16 @@
     }
 
     to {
-        transform: rotate(540deg) translateX(var(--orbit-translate)) rotate(540deg);
+        transform: rotate(540deg) translateX(var(--orbit-translate)) rotate(-180deg);
+    }
+}
+
+@keyframes Orbita3 {
+    from {
+        transform: rotate(90deg) translateX(var(--orbit-translate)) rotate(90deg);
+    }
+
+    to {
+        transform: rotate(450deg) translateX(var(--orbit-translate)) rotate(-270deg);
     }
 }
