@@ -5,7 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./components/widgets/Footer/Footer";
 import Header from "./components/widgets/Header/Header";
 import { lazy, Suspense } from "react";
-import Contacts from "@pages/Contacts/Contacts";
 
 const Games = lazy(() => import("@pages/Games/Games"));
 const CardGames = lazy(
@@ -14,6 +13,7 @@ const CardGames = lazy(
 const Projects = lazy(() => import("@pages/Projects/Projects"));
 const Home = lazy(() => import("@pages/home/Home"));
 const CoverLetter = lazy(() => import("@pages/CoverLetter/CoverLetter"));
+const Contacts = lazy(() => import("@pages/Contacts/Contacts"));
 
 function App() {
   return (

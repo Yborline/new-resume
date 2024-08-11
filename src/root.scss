@@ -18,6 +18,8 @@
     --background-button-card-other: rgba(255, 255, 255, 1);
     --scrollbar-track-color: #D3D3D3;
     --scrollbar-track-thumb: #9370DB;
+    --colorContactsShadow: #9370DB;
+    --backgroundPlanets: radial-gradient(circle, rgba(0, 72, 99, 0.4150035014005602) 0%, rgba(159, 61, 198, 0.4206057422969187) 48%, rgba(0, 72, 99, 1) 98%);
 }
 
 :root[data-theme="dark"] {
@@ -41,5 +43,7 @@
 
     --background-button-card-other: rgba(0, 0, 0, 0.5);
     --scrollbar-track-color: #D3D3D3;
-    --scrollbar-track-thumb: #778899;
+    --scrollbar-track-thumb: #9370DB;
+    --colorContactsShadow: #57A8FA;
+    --backgroundPlanets: radial-gradient(circle, rgba(0, 72, 99, 0.4150035014005602) 0%, rgba(144, 61, 198, 0.4206057422969187) 34%, rgba(144, 61, 198, 1) 65%, rgba(0, 72, 99, 1) 98%);
 }
