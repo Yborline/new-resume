@@ -93,7 +93,7 @@ const CardGames = () => {
           </div>
         )}
         {arrayCards.map((_, index) => (
-          <li key={index} onClick={handleCardClicks[index]}>
+          <li className={styles.mainCard} key={index} onClick={handleCardClicks[index]}>
             <FlippyCard
               key={index}
               styleCard="cardGame"

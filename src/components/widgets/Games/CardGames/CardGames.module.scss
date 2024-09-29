@@ -25,6 +25,10 @@
         gap: 10px;
         position: relative;
 
+        .mainCard {
+            cursor: pointer;
+        }
+
         .overlay {
             position: absolute;
             top: 0;
