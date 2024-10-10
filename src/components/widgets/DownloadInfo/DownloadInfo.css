@@ -1,0 +1,44 @@
+@media screen and (min-width: 220px) {
+  .jumbotron {
+    margin: auto 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: var(--background-color);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+    color: var(--text-color);
+  }
+  .jumbotron .display-4 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .jumbotron {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .jumbotron .display-4 {
+    text-align: center;
+  }
+  .jumbotron .lead {
+    max-width: 800px;
+  }
+}
+/*# sourceMappingURL=DownloadInfo.css.map */

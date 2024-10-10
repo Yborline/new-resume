@@ -1,0 +1,96 @@
+.button_arrow-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  color: white;
+  background: var(--background-button-card);
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-shadow: 6px 6px 0 var(--background-button-card-box-shadow-one);
+          box-shadow: 6px 6px 0 var(--background-button-card-box-shadow-one);
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+  border: none;
+  padding: 0px 20px;
+  height: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 150px;
+}
+
+.button_arrow-animation:focus {
+  outline: none;
+}
+
+.button_arrow-animation:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 10px 10px 0 var(--background-button-card-box-shadow-two);
+          box-shadow: 10px 10px 0 var(--background-button-card-box-shadow-two);
+}
+
+.button_arrow-animation .button_arrow-span-one {
+  -webkit-transform: skewX(15deg);
+          transform: skewX(15deg);
+}
+
+.button_arrow-animation:hover svg {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-right: 20px;
+}
+
+.button_arrow-animation:hover .one {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-animation: color_anim 1s infinite 0.6s;
+          animation: color_anim 1s infinite 0.6s;
+}
+
+.button_arrow-animation:hover .two {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-animation: color_anim 1s infinite 0.4s;
+          animation: color_anim 1s infinite 0.4s;
+}
+
+.button_arrow-animation:hover .three {
+  -webkit-animation: color_anim 1s infinite 0.2s;
+          animation: color_anim 1s infinite 0.2s;
+}
+
+@-webkit-keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FBC638;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FBC638;
+  }
+  100% {
+    fill: white;
+  }
+}
+/*# sourceMappingURL=ButtonCard.css.map */
