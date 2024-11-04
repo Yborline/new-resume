@@ -17,10 +17,10 @@ const Contacts = lazy(() => import("@pages/Contacts/Contacts"));
 
 function App() {
   return (
-    <div className="app-container">
-      <div className="twinkling"></div>
-      <Header />
-      <Suspense>
+    <Suspense>
+      <div className="app-container">
+        <div className="twinkling"></div>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/letter" element={<CoverLetter />} />
@@ -31,9 +31,10 @@ function App() {
           </Route>
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
-      </Suspense>
-      <Footer />
-    </div>
+
+        <Footer />
+      </div>
+    </Suspense>
   );
 }
 
