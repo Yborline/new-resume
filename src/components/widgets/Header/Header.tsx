@@ -12,9 +12,9 @@ const Header = () => {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <div className="navbar_box-left">
-          <Navbar.Brand className="title" href="/">
+          <NavLink className="title" to="/">
             My resume
-          </Navbar.Brand>
+          </NavLink>
           <ThemeContext.Consumer>
             {({ theme, setTheme }) => (
               <ThemeToggle
