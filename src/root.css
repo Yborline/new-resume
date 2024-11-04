@@ -1,0 +1,48 @@
+:root[data-theme="light"] {
+  --navbar-background: rgba(220, 220, 220, 0.5);
+  --navbar-color: rgba(0, 0, 0, 0.6);
+  --navbar-color-active: rgba(0, 0, 0, 1);
+  --navbar-toggle-background: #DCDCDC;
+  --background-color: rgba(255, 255, 255, 0.5);
+  --text-color: black;
+  --card-project-background-front: linear-gradient(223deg, rgba(0, 72, 99, 0.4150035014005602) 0%, rgba(159, 61, 198, 0.4206057422969187) 100%);
+  --card-project-background-back: rgb(160, 102, 245, 20%);
+  --card-project-shadow-color: rgba(0, 0, 0, 0.75);
+  --white-text: rgba(255, 255, 255, 1);
+  --text-buttonGradiend-hover: rgba(255, 255, 255, 0);
+  --gradient-button: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(159, 61, 198, 1) 9%, rgba(201, 145, 47, 1) 34%, rgba(240, 29, 72, 1) 77%, rgba(63, 94, 251, 1) 100%);
+  --background-button-card: #8FBC8F;
+  --background-button-card-box-shadow-one: black;
+  --background-button-card-box-shadow-two: #2F4F4F;
+  --border: black;
+  --background-button-card-other: rgba(255, 255, 255, 1);
+  --scrollbar-track-color: #D3D3D3;
+  --scrollbar-track-thumb: #9370DB;
+  --colorContactsShadow: #9370DB;
+  --backgroundPlanets: radial-gradient(circle, rgba(0, 72, 99, 0.4150035014005602) 0%, rgba(159, 61, 198, 0.4206057422969187) 48%, rgba(0, 72, 99, 1) 98%);
+}
+
+:root[data-theme="dark"] {
+  --navbar-background: rgba(255, 255, 255, 0.15);
+  --navbar-color: rgba(255, 255, 255, 0.6);
+  --navbar-color-active: rgba(255, 255, 255, 1);
+  --navbar-toggle-background: rgba(255, 255, 255, 0.6);
+  --background-color: rgba(255, 255, 255, 0.35);
+  --text-color: white;
+  --card-project-background-front: radial-gradient(circle, rgba(55, 0, 45, 0.62) 23%, rgba(0, 49, 59, 0.72) 100%);
+  --card-project-background-back: rgba(72, 61, 139, 0.5);
+  --card-project-shadow-color: rgba(255, 255, 255, 1);
+  --white-text: rgba(255, 255, 255, 1);
+  --text-buttonGradiend-hover: rgba(255, 255, 255, 1);
+  --gradient-button: linear-gradient(90deg, #d14164 0%, #9348c0 25%, #1b91f2 50%, #35d9c5 75%, #d14164 100%);
+  --background-button-card: #6225E6;
+  --background-button-card-box-shadow-one: black;
+  --background-button-card-box-shadow-two: #FBC638;
+  --border: rgba(255, 255, 255, 1);
+  --background-button-card-other: rgba(0, 0, 0, 0.5);
+  --scrollbar-track-color: #D3D3D3;
+  --scrollbar-track-thumb: #9370DB;
+  --colorContactsShadow: #57A8FA;
+  --backgroundPlanets: radial-gradient(circle, rgba(0, 72, 99, 0.4150035014005602) 0%, rgba(144, 61, 198, 0.4206057422969187) 34%, rgba(144, 61, 198, 1) 65%, rgba(0, 72, 99, 1) 98%);
+}
+/*# sourceMappingURL=root.css.map */

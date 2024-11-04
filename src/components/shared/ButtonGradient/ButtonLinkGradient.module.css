@@ -1,0 +1,47 @@
+.button {
+  padding: 0 10px;
+  position: relative;
+  background: var(--gradient-button);
+  color: var(--white-text);
+  background-size: 200% 100%;
+  font-weight: 600;
+  animation: changeBackground 10s ease infinite;
+  height: 40px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+}
+
+.button:hover {
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  color: var(--white-text);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 10px;
+  background-size: 200% 200%;
+  background-image: linear-gradient(90deg, #CF4166 0%, #9E47AF 17%, #218DEF 34%, #34D7C6 51%, #218DEF 68%, #9E47AF 84%, #CF4166 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: changeBackground 10s ease infinite;
+}
+
+@-webkit-keyframes changeBackground {
+
+  0%,
+  100% {
+    background-position: 0% 100%;
+  }
+
+  50% {
+    background-position: 200% 100%;
+  }
+}

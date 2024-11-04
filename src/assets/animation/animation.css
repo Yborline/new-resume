@@ -1,0 +1,23 @@
+@-webkit-keyframes pulsate {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 150% 150%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+@keyframes pulsate {
+  0% {
+    background-size: 100% 100%;
+  }
+  50% {
+    background-size: 150% 150%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+/*# sourceMappingURL=animation.css.map */

@@ -1,0 +1,58 @@
+.svg-arrow {
+  position: static !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-right: 0px;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: translateX(-60%);
+          transform: translateX(-60%);
+}
+
+.two {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translateX(-30%);
+          transform: translateX(-30%);
+}
+
+.three {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@-webkit-keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FBC638;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FBC638;
+  }
+  100% {
+    fill: white;
+  }
+}
+/*# sourceMappingURL=svgArrow.css.map */

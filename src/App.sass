@@ -1,13 +1,11 @@
-@media screen and ( min-width:0px  )
-   [data-theme="dark"] .app-container, .twinkling
+@media screen and (min-width: 0px)
+  [data-theme="dark"] .app-container, .twinkling
     position: absolute
     top: 0
     left: 0
     right: 0
     bottom: 0
     width: 100%
-    display: block
-    min-height: 100vh
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -15,16 +13,15 @@
     z-index: 0
     will-change: background-position
 
-   [data-theme="dark"] .app-container
+  [data-theme="dark"] .app-container
     background: #000 url(https://i.postimg.cc/hhFD7Nkf/apps-47636-13819498107583324-fb06b53a-4974-4acb-85e6-f6f363f85ab6-edec48d0-ec35-4a1f-8bf5-c455987b4a.png) repeat top center
 
-   [data-theme="dark"] .twinkling
+  [data-theme="dark"] .twinkling
     z-index: -1
     background-image: url(https://i.postimg.cc/CLpNr4PF/twinkling.png)
-    animation: 3s twinkle infinite
-    animation-timing-function: linear
+    animation: 3s twinkle infinite linear
 
-   [data-theme="light"] .app-container
+  [data-theme="light"] .app-container
     will-change: background-position
     align-items: center
     position: absolute
@@ -33,28 +30,31 @@
     right: 0
     bottom: 0
     width: 100%
-    display: block
-    min-height: 100vh
     display: flex
     flex-direction: column
     justify-content: space-between
     z-index: 0
-    background-color: hsla(200,40%,30%,.4)
+    background-color: hsla(200, 40%, 30%, 0.4)
     background-image: url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png')
     background-repeat: repeat-x
     background-position: 0 110%, 0 105%, 0 10%, 0 105%, 0 0
-    background-size: 750px,900px,500px 200px,1000px,400px 260px
+    background-size: 750px, 900px, 500px 200px, 1000px, 400px 260px
     animation: 100s para infinite linear
 
-   [data-theme="light"] .twinkling
+  [data-theme="light"] .twinkling
     display: none
+
+.app-main-container
+    min-width: 100vw
+    min-height: 100vh
+    position: relative
 
 @keyframes para
     100%
-        background-position: -5000px 110%,-800px 105%,500px 10%,1000px 105%,400px 0
+        background-position: -5000px 110%, -800px 105%, 500px 10%, 1000px 105%, 400px 0
 
 @keyframes twinkle
     from
-        backrgound-position: 0
+        background-position: 0
     to
         background-position: -100px 0
