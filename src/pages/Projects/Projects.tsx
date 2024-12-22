@@ -113,6 +113,7 @@ const Projects = () => {
         backend={project.backend}
         info={project.info}
         technology={project.technology}
+        project={project.project}
         onClick={clickHandlers.get(project.id) || (() => {})}
       />
     ));

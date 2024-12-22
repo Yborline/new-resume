@@ -5,12 +5,42 @@ import mobileImg from "@assets/images/projects/mobile.png";
 import newResumeImg from "@assets/images/projects/newResume.png";
 import petshopImg from "@assets/images/projects/petshop.png";
 import webStudioImg from "@assets/images/projects/webStudio.png";
+import teamFinder from "@assets/images/projects/teamFinder.png";
 
 export const projects = [
   {
+    name: "Team Dinder",
+    project: "team" as const,
+    link: "https://borlinerepair.netlify.app",
+    frontend: "https://team-finder-six.vercel.app/",
+    img: teamFinder,
+    technology: [
+      "HTML",
+      "CSS",
+      "JS",
+      "SCSS",
+      "React",
+      "Typescript",
+      "axios",
+      "react-redux",
+      "reduxjs/toolkit",
+      "react-hook-form",
+      "react-oauth/google",
+      "react-i18next",
+      "framer-motion",
+      "yup",
+      "react-paginate",
+      "react-select",
+      "react-icons",
+      "react-toastify",
+    ],
+    info: "A website for searching for players in the game.",
+    id: 8,
+  },
+  {
     name: "My resume",
     project: "own" as const,
-    link: "https://borlinerepair.netlify.app",
+    link: "https://new-resume-two.vercel.app",
     frontend: "https://github.com/Yborline/react-mobile-repair",
     img: newResumeImg,
     technology: ["HTML", "CSS", "JS", "SASS", "Babel", "React", "Typescript"],
