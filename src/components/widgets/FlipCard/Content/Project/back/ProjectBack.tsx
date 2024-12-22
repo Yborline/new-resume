@@ -7,12 +7,12 @@ interface IPropsFront {
   backend?: string;
   info: string;
   technology: string[];
-
+  project: "own" | "team";
   onClick: () => void;
 }
 
 const BackContentProject: FC<IPropsFront> = memo(
-  ({ frontend, backend, technology, onClick }) => {
+  ({ frontend, backend, technology, project, onClick }) => {
     const stringStack = technology.join(", ");
 
     return (
@@ -31,7 +31,7 @@ const BackContentProject: FC<IPropsFront> = memo(
 
         <p className={styles.titleTwo}>technology </p>
         <p className={styles.listTechnology}>{stringStack}</p>
-
+        <p className={styles.titleCode}>{project} project</p>
         <ButtonCard onClick={onClick} text="Back" />
       </div>
     );

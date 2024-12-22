@@ -40,7 +40,7 @@ export const projects = [
   {
     name: "My resume",
     project: "own" as const,
-    link: "https://borlinerepair.netlify.app",
+    link: "https://new-resume-two.vercel.app",
     frontend: "https://github.com/Yborline/react-mobile-repair",
     img: newResumeImg,
     technology: ["HTML", "CSS", "JS", "SASS", "Babel", "React", "Typescript"],
